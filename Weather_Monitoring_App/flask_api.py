@@ -66,20 +66,6 @@ class WeatherMonitoring(Resource):
             #     print(i)
             # print("here")
             '''
-            #weather_detail_pd_df=None
-            #return weather_detail_pd_df.to_json(orient="records")
-            connection_obj=get_presto_connection()
-            cursor_obj=connection_obj.curson()
-            #cursor_obj.execute('select * from weather_detail_tbl order by creationTime desc limit 10')
-            rows=cursor_obj.fetchall()
-            
-            print(type(rows))
-            for row in rows:
-            print(row)
-            weather_detail={"CityName":row[0], "Temperature":row[1], "Humidity":row[2], "CreationTime":row[3],"Creationdate":row[4]}
-            weather_detail_list.append(weather_detail)
-            '''
-
             path1 = "..\\path\\streams\\*.csv"
             path2 = "..\\path\\backup"
             for fname in glob.glob(path1):
